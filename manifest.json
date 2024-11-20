@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "researchPocket",
+  "version": "1.0",
+  "description": "Find and summarize research papers",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
